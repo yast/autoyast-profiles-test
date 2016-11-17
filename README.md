@@ -69,7 +69,3 @@ end
 - rpm
 - coreutils
 
-## To Do
-
-Split profiles and execution code into two separate projects so that the code
-can be made public.
