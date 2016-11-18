@@ -7,6 +7,7 @@
 #
 
 ROOT_DIR=$1; shift
+ARCH=$1; shift
 PACKAGE=$1; shift
 ZYPP_REPOS=$@
 
@@ -37,13 +38,14 @@ for REPO_URL in ${ZYPP_REPOS}; do
     zypper ${ZYPPER_GLOBAL_PARAMS} addrepo --no-gpgcheck --refresh ${REPO_URL} temporary_${REPO_COUNTER} || exit 1
 done
 
+export ZYPP_TESTSUITE_FAKE_ARCH=${ARCH}
 # Download the requested package
 zypper ${ZYPPER_GLOBAL_PARAMS} --disable-system-resolvables download ${PACKAGE} || exit 1
 
 # Find where the package is downloaded and install it (without any dependencies)
 for PACKAGE_LOCATION in `find ${ROOT_DIR} -name ${PACKAGE}*.rpm`; do
     echo "Installing ${PACKAGE_LOCATION} to ${ROOT_DIR}"
-    rpm -v --root ${ROOT_DIR} --install --nodeps --noscripts --notriggers --nosignature ${PACKAGE_LOCATION} || exit 1
+    rpm -v --root ${ROOT_DIR} --install --nodeps --noscripts --notriggers --nosignature --ignorearch ${PACKAGE_LOCATION} || exit 1
 done
 
 if [ "${PACKAGE_LOCATION}" == "" ]; then

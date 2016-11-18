@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Fri Nov 18 15:31:34 CET 2016 - schubi@suse.de
+
+- Added architecture support and example for registration.
+- 0.0.3
+
+-------------------------------------------------------------------
 Fri Nov 18 10:18:16 CET 2016 - schubi@suse.de
 
 - Moved to official githup repo:
