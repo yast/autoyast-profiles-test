@@ -5,8 +5,9 @@ This project contains set of AutoYaST profiles known to be valid and some
 others known to be invalid for some known reason. The test should be called
 periodically using the latest and greatest AutoYaST schema package from build.
 
-AutoYaST profiles are stored in "as-is" state, for that reason they need to be
-on a non-public place, as they might contain sensitive information.
+## CAUTION
+
+AutoYaST profiles can contain sensitive information. So check new AutoYaST profiles before adding it to the project. This project is a public project which everyone can see!
 
 ## Workflow
 

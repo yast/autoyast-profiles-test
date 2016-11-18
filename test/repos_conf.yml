@@ -1,0 +1,15 @@
+Head:
+  repository: http://download.opensuse.org/repositories/YaST:/Head/openSUSE_Factory/
+  fallback_repository: http://download.opensuse.org/distribution/openSUSE-current/repo/oss/suse/
+
+sle-12:
+  repository: http://download.suse.de/ibs/Devel:/YaST:/SLE-12/SLE_12/
+  fallback_repository: http://download.suse.de/ibs/SUSE:/SLE-12:/GA/standard/
+
+sle-12-sp1:
+  repository: http://download.suse.de/ibs/Devel:/YaST:/SLE-12-SP1/SLE-12-SP1/
+  fallback_repository: http://download.suse.de/ibs/SUSE:/SLE-12-SP1:/GA/standard/
+
+sle-11-sp4:
+  repository: http://download.suse.de/ibs/SUSE:/SLE-11-SP4:/Update/standard/
+  fallback_repository: http://download.suse.de/ibs/SUSE:/SLE-11-SP2:/GA/standard/

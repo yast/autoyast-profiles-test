@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE profile>
+<profile xmlns="http://www.suse.com/1.0/yast2ns" xmlns:config="http://www.suse.com/1.0/configns">
+  <software>
+    <packages config:type="list">
+      <package>grub2</package>
+      <package>glibc</package>
+      <package>openssh</package>
+      <package>mc</package>
+      <package>syslinux</package>
+      <package>kernel</package>
+      <package>sles-release</package>
+    </packages>
+    <patterns config:type="list">
+      <pattern>Minimal</pattern>
+      <pattern>base</pattern>
+    </patterns>
+  </software>
+  <users config:type="list">
+    <user>
+      <encrypted config:type="boolean">true</encrypted>
+      <fullname>root</fullname>
+      <gid>0</gid>
+      <home>/root</home>
+      <password_settings>
+        <expire/>
+        <flag/>
+        <inact/>
+        <max/>
+        <min/>
+        <warn/>
+      </password_settings>
+      <shell>/bin/bash</shell>
+      <uid>0</uid>
+      <user_password>xxxxxxxxxxxxx</user_password>
+      <username>root</username>
+    </user>
+  </users>
+</profile>
