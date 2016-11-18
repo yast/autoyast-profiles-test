@@ -1159,6 +1159,31 @@ DefaultPolicy default
       </enable>
     </services>
   </services-manager>
+  <suse_register>
+    <addons config:type="list">
+      <addon>
+        <arch>x86_64</arch>
+        <name>sle-sdk</name>
+        <reg_code/>
+        <release_type>nil</release_type>
+        <version>12</version>
+      </addon>
+      <addon>
+        <arch>x86_64</arch>
+        <name>sle-module-adv-systems-management</name>
+        <reg_code/>
+        <release_type>nil</release_type>
+        <version>12</version>
+      </addon>
+    </addons>
+    <do_registration config:type="boolean">true</do_registration>
+    <email/>
+    <install_updates config:type="boolean">true</install_updates>
+    <reg_code/>
+    <reg_server>http://11.11.11.1/center/regsvc</reg_server>
+    <reg_server_cert/>
+    <slp_discovery config:type="boolean">false</slp_discovery>
+  </suse_register>
   <software>
     <image/>
     <instsource/>
