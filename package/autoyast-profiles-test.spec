@@ -24,7 +24,7 @@
 ######################################################################
 
 Name:           autoyast-profiles-test
-Version:        0.0.2
+Version:        0.0.3
 Release:        0
 BuildArch:      noarch
 
