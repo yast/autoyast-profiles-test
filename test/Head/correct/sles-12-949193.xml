@@ -1,0 +1,317 @@
+<?xml version="1.0" ?>
+<!DOCTYPE profile>
+<profile xmlns="http://www.suse.com/1.0/yast2ns" xmlns:config="http://www.suse.com/1.0/configns">
+  <add-on>
+    <add_on_products config:type="list">
+    <listentry>
+        <media_url><![CDATA[http://192.168.66.6/repo/SUSE/Updates/SLE-SERVER/12/x86_64/update]]></media_url>
+        <product>SLE-SERVER-12</product>
+        <product_dir>/</product_dir>
+      </listentry>
+      <listentry>
+        <media_url><![CDATA[http://192.168.66.6/repo/SUSE/Updates/SLE-SDK/12/x86_64/update]]></media_url>
+        <product>SLE-SERVER-12-SDK</product>
+        <product_dir>/</product_dir>
+      </listentry>
+    </add_on_products>
+    </add-on>
+  <firewall>
+    <FW_ALLOW_FW_BROADCAST_DMZ>no</FW_ALLOW_FW_BROADCAST_DMZ>
+    <FW_ALLOW_FW_BROADCAST_EXT>no</FW_ALLOW_FW_BROADCAST_EXT>
+    <FW_ALLOW_FW_BROADCAST_INT>no</FW_ALLOW_FW_BROADCAST_INT>
+    <FW_CONFIGURATIONS_DMZ/>
+    <FW_CONFIGURATIONS_EXT/>
+    <FW_CONFIGURATIONS_INT/>
+    <FW_DEV_DMZ/>
+    <FW_DEV_EXT/>
+    <FW_DEV_INT/>
+    <FW_FORWARD_ALWAYS_INOUT_DEV/>
+    <FW_FORWARD_MASQ/>
+    <FW_IGNORE_FW_BROADCAST_DMZ>no</FW_IGNORE_FW_BROADCAST_DMZ>
+    <FW_IGNORE_FW_BROADCAST_EXT>yes</FW_IGNORE_FW_BROADCAST_EXT>
+    <FW_IGNORE_FW_BROADCAST_INT>no</FW_IGNORE_FW_BROADCAST_INT>
+    <FW_IPSEC_TRUST>no</FW_IPSEC_TRUST>
+    <FW_LOAD_MODULES/>
+    <FW_LOG_ACCEPT_ALL>no</FW_LOG_ACCEPT_ALL>
+    <FW_LOG_ACCEPT_CRIT>yes</FW_LOG_ACCEPT_CRIT>
+    <FW_LOG_DROP_ALL>no</FW_LOG_DROP_ALL>
+    <FW_LOG_DROP_CRIT>yes</FW_LOG_DROP_CRIT>
+    <FW_MASQUERADE>no</FW_MASQUERADE>
+    <FW_PROTECT_FROM_INT>no</FW_PROTECT_FROM_INT>
+    <FW_ROUTE>no</FW_ROUTE>
+    <FW_SERVICES_ACCEPT_DMZ/>
+    <FW_SERVICES_ACCEPT_EXT/>
+    <FW_SERVICES_ACCEPT_INT/>
+    <FW_SERVICES_ACCEPT_RELATED_DMZ/>
+    <FW_SERVICES_ACCEPT_RELATED_EXT/>
+    <FW_SERVICES_ACCEPT_RELATED_INT/>
+    <FW_SERVICES_DMZ_IP/>
+    <FW_SERVICES_DMZ_RPC/>
+    <FW_SERVICES_DMZ_TCP/>
+    <FW_SERVICES_DMZ_UDP/>
+    <FW_SERVICES_EXT_IP/>
+    <FW_SERVICES_EXT_RPC/>
+    <FW_SERVICES_EXT_TCP/>
+    <FW_SERVICES_EXT_UDP/>
+    <FW_SERVICES_INT_IP/>
+    <FW_SERVICES_INT_RPC/>
+    <FW_SERVICES_INT_TCP/>
+    <FW_SERVICES_INT_UDP/>
+    <enable_firewall config:type="boolean">false</enable_firewall>
+    <start_firewall config:type="boolean">false</start_firewall>
+  </firewall>
+  <general>
+	<ask-list config:type="list">
+          <ask>
+		<dialog config:type="integer">1</dialog>
+		<element config:type="integer">0</element>
+		<question>Hostname</question>
+		<default/>
+		<title>Hostname und Domain fuer diesen Server</title>
+		<pathlist config:type="list">
+			<path>networking,dns,hostname</path>
+			<path>host,hosts,0,names,0</path>
+		</pathlist>
+		<file>/tmp/hostname</file>
+		<stage>initial</stage>
+    </ask>
+    <ask>
+		<dialog config:type="integer">1</dialog>
+        <element config:type="integer">1</element>
+        <question>Domain</question>
+        <default>kamu.adm</default>
+        <pathlist config:type="list">
+          <path>networking,dns,domain</path>
+        </pathlist>
+		<back_label>Zurueck</back_label>
+		<ok_label>Weiter</ok_label>
+		<file>/tmp/domain</file>
+        <stage>initial</stage>
+    </ask>
+    <ask>
+        <dialog config:type="integer">2</dialog>
+        <element config:type="integer">0</element>
+        <question>IP-Adresse bond0/CIDR</question>
+        <default>10.30.246./23</default>
+        <pathlist config:type="list">
+          <path>networking,interfaces,0,ipaddr</path>
+          <path>host,hosts,0,host_address</path>
+        </pathlist>
+		<file>/tmp/ipaddr</file>
+		<ok_label>Installieren</ok_label>
+        <stage>initial</stage>
+    </ask>
+    </ask-list>
+    <mode>
+      <confirm config:type="boolean">false</confirm>
+    </mode>
+    <proposals config:type="list"/>
+    <signature-handling>
+      <accept_file_without_checksum config:type="boolean">true</accept_file_without_checksum>
+      <accept_non_trusted_gpg_key config:type="boolean">true</accept_non_trusted_gpg_key>
+      <accept_unknown_gpg_key config:type="boolean">true</accept_unknown_gpg_key>
+      <accept_unsigned_file config:type="boolean">true</accept_unsigned_file>
+      <accept_verification_failed config:type="boolean">true</accept_verification_failed>
+      <import_gpg_key config:type="boolean">true</import_gpg_key>
+    </signature-handling>
+    <storage>
+      <partition_alignment config:type="symbol">align_optimal</partition_alignment>
+      <start_multipath config:type="boolean">false</start_multipath>
+    </storage>
+  </general>
+  <keyboard>
+    <keyboard_values>
+      <delay/>
+      <discaps config:type="boolean">false</discaps>
+      <numlock>bios</numlock>
+      <rate/>
+    </keyboard_values>
+    <keymap>german</keymap>
+  </keyboard>
+  <language>
+    <language>en_US</language>
+  </language>
+  <login_settings/>
+  <networking>
+    <dhcp_options>
+      <dhclient_client_id/>
+      <dhclient_hostname_option>AUTO</dhclient_hostname_option>
+    </dhcp_options>
+    <dns>
+      <dhcp_hostname config:type="boolean">false</dhcp_hostname>
+      <domain>home.lan</domain>
+      <hostname>fsctest</hostname>
+      <resolv_conf_policy/>
+      <searchlist config:type="list">
+        <search>home.lan</search>
+      </searchlist>
+      <write_hostname config:type="boolean">false</write_hostname>
+    </dns>
+	<interfaces config:type="list">
+      <interface>
+        <bonding_master>yes</bonding_master>
+        <bonding_module_opts>mode=active-backup miimon=100</bonding_module_opts>
+        <bonding_slave0>eth0</bonding_slave0>
+        <bonding_slave1>eth1</bonding_slave1>
+        <bootproto>static</bootproto>
+        <device>bond0</device>
+        <ipaddr>_ask_</ipaddr>
+        <netmask>255.255.255.0</netmask>
+        <startmode>auto</startmode>
+        <usercontrol>no</usercontrol>
+      </interface>
+      <interface>
+        <bootproto>none</bootproto>
+        <device>eth0</device>
+        <name>eth0</name>
+        <startmode>auto</startmode>
+        <usercontrol>no</usercontrol>
+      </interface>
+      <interface>
+        <bootproto>none</bootproto>
+        <device>eth1</device>
+        <name>eth1</name>
+        <startmode>auto</startmode>
+        <usercontrol>no</usercontrol>
+      </interface>
+      <interface>
+        <broadcast>127.255.255.255</broadcast>
+        <device>lo</device>
+        <firewall>no</firewall>
+        <ipaddr>127.0.0.1</ipaddr>
+        <netmask>255.0.0.0</netmask>
+        <network>127.0.0.0</network>
+        <prefixlen>8</prefixlen>
+        <startmode>auto</startmode>
+        <usercontrol>no</usercontrol>
+      </interface>
+    </interfaces>
+    <ipv6 config:type="boolean">false</ipv6>
+    <keep_install_network config:type="boolean">false</keep_install_network>
+    <managed config:type="boolean">false</managed>
+    <routing>
+      <ipv4_forward config:type="boolean">false</ipv4_forward>
+      <ipv6_forward config:type="boolean">false</ipv6_forward>
+	  <routes config:type="list">
+        <route>
+          <destination>default</destination>
+          <device>-</device>
+          <gateway>10.30.246.1</gateway>
+          <netmask>-</netmask>
+        </route>
+      </routes>
+    </routing>
+  </networking>
+  <ntp-client>
+    <ntp_policy>auto</ntp_policy>
+    <peers config:type="list"/>
+    <start_at_boot config:type="boolean">true</start_at_boot>
+    <start_in_chroot config:type="boolean">false</start_in_chroot>
+    <sync_interval config:type="integer">5</sync_interval>
+    <synchronize_time config:type="boolean">false</synchronize_time>
+  </ntp-client>
+  <report>
+    <errors>
+      <log config:type="boolean">true</log>
+      <show config:type="boolean">true</show>
+      <timeout config:type="integer">0</timeout>
+    </errors>
+    <messages>
+      <log config:type="boolean">true</log>
+      <show config:type="boolean">true</show>
+      <timeout config:type="integer">10</timeout>
+    </messages>
+    <warnings>
+      <log config:type="boolean">true</log>
+      <show config:type="boolean">true</show>
+      <timeout config:type="integer">10</timeout>
+    </warnings>
+    <yesno_messages>
+      <log config:type="boolean">true</log>
+      <show config:type="boolean">true</show>
+      <timeout config:type="integer">10</timeout>
+    </yesno_messages>
+  </report>
+  <services-manager>
+    <default_target>multi-user</default_target>
+    <services>
+      <disable config:type="list"/>
+      <enable config:type="list">
+        <service>sshd</service>
+      </enable>
+    </services>
+  </services-manager>
+  <software>
+    <image/>
+    <instsource/>
+    <packages config:type="list">
+      <package>gcc-c++</package>
+      <package>gcc</package>
+      <package>glibc</package>
+      <package>openssh</package>
+      <package>grub2</package>
+      <package>libstdc++-devel</package>
+      <package>kernel-source</package>
+      <package>syslinux</package>
+      <package>libaio-devel</package>
+      <package>sysstat</package>
+      <package>sle-sdk-release</package>
+      <package>kdump</package>
+      <package>sle-module-adv-systems-management-release</package>
+      <package>numactl</package>
+      <package>sles-release</package>
+      <package>kexec-tools</package>
+      <package>makedumpfile</package>
+      <package>irqbalance</package>
+      <package>perl-Bootloader-YAML</package>
+    </packages>
+    <patterns config:type="list">
+      <pattern>CFEngien</pattern>
+      <pattern>Machinery</pattern>
+      <pattern>Puppet</pattern>
+      <pattern>32bit</pattern>
+      <pattern>Minimal</pattern>
+      <pattern>base</pattern>
+      <pattern>documentation</pattern>
+      <pattern>gnome-basic</pattern>
+      <pattern>kvm_server</pattern>
+      <pattern>kvm_tools</pattern>
+      <pattern>x11</pattern>
+    </patterns>
+  </software>
+  <timezone>
+    <hwclock>UTC</hwclock>
+    <timezone>Europe/Berlin</timezone>
+  </timezone>
+  <user_defaults>
+    <expire/>
+    <group>100</group>
+    <groups/>
+    <home>/home</home>
+    <inactive>-1</inactive>
+    <no_groups config:type="boolean">true</no_groups>
+    <shell>/bin/bash</shell>
+    <skel>/etc/skel</skel>
+    <umask>022</umask>
+  </user_defaults>
+  <users config:type="list">
+    <user>
+      <encrypted config:type="boolean">false</encrypted>
+      <fullname>root</fullname>
+      <gid>0</gid>
+      <home>/root</home>
+      <password_settings>
+        <expire/>
+        <flag/>
+        <inact/>
+        <max/>
+        <min/>
+        <warn/>
+      </password_settings>
+      <shell>/bin/bash</shell>
+      <uid>0</uid>
+      <user_password>xxxxxxx</user_password>
+      <username>root</username>
+    </user>
+  </users>
+</profile>

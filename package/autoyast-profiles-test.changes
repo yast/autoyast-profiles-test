@@ -1,0 +1,13 @@
+-------------------------------------------------------------------
+Fri Nov 18 10:18:16 CET 2016 - schubi@suse.de
+
+- Moved to official githup repo:
+  https://github.com/yast/autoyast-profiles-test
+  "Secret" data removed.
+- 0.0.2
+
+-------------------------------------------------------------------
+Fri Nov 13 13:52:01 CET 2015 - locilka@suse.com
+
+- Initial version
+- 0.0.1

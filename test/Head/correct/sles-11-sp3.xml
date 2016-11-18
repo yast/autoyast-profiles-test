@@ -1,0 +1,178 @@
+<?xml version="1.0" ?>
+<!DOCTYPE profile>
+<profile xmlns="http://www.suse.com/1.0/yast2ns" xmlns:config="http://www.suse.com/1.0/configns">
+   <add-on>
+    <add_on_products config:type="list">
+      <listentry>
+        <media_url><![CDATA[http://nuc/install/sle11/sle11sp3sdkx86_64]]></media_url>
+        <product>SUSE Linux Enterprise Software Development Kit 11 SP3</product>
+        <product_dir>/</product_dir>
+      </listentry>
+    </add_on_products>
+  </add-on>
+  <deploy_image>
+    <image_installation config:type="boolean">false</image_installation>
+  </deploy_image>
+  <firewall>
+    <enable_firewall config:type="boolean">false</enable_firewall>
+    <start_firewall config:type="boolean">false</start_firewall>
+  </firewall>
+  <general>
+   <ask-list config:type="list"> 
+    <ask>
+          <path>networking,dns,hostname</path>
+          <question>Enter Hostname (server name)</question>
+          <stage>initial</stage>
+          <default>enter your hostname here</default>
+    </ask>
+     <ask> 
+         <path>networking,dns,domain</path> 
+         <question>Enter Domain</question> 
+         <stage>initial</stage> 
+         <default>site</default> 
+     </ask> 
+   </ask-list>
+    <mode>
+      <confirm config:type="boolean">false</confirm>
+    </mode>
+    <proposals config:type="list"/>
+    <signature-handling/>
+    <storage/>
+  </general>
+  <groups config:type="list">
+    <group>
+      <encrypted config:type="boolean">true</encrypted>
+      <gid>1</gid>
+      <group_password>x</group_password>
+      <groupname>bin</groupname>
+      <userlist/>
+    </group>
+    <group>
+      <encrypted config:type="boolean">true</encrypted>
+      <gid>65534</gid>
+      <group_password>x</group_password>
+      <groupname>nogroup</groupname>
+      <userlist/>
+    </group>
+    <group>
+      <encrypted config:type="boolean">true</encrypted>
+      <gid>113</gid>
+      <group_password>!</group_password>
+      <groupname>kvm</groupname>
+      <userlist/>
+    </group>
+    <group>
+      <encrypted config:type="boolean">true</encrypted>
+      <gid>17</gid>
+      <group_password>x</group_password>
+      <groupname>audio</groupname>
+      <userlist/>
+    </group>
+  </groups>
+  <kdump>
+    <add_crash_kernel config:type="boolean">true</add_crash_kernel>
+    <crash_kernel>256M-:128M</crash_kernel>
+    <general>
+      <KDUMP_COPY_KERNEL>no</KDUMP_COPY_KERNEL>
+      <KDUMP_DUMPFORMAT>compressed</KDUMP_DUMPFORMAT>
+      <KDUMP_DUMPLEVEL>25</KDUMP_DUMPLEVEL>
+      <KDUMP_IMMEDIATE_REBOOT>yes</KDUMP_IMMEDIATE_REBOOT>
+      <KDUMP_KEEP_OLD_DUMPS>2</KDUMP_KEEP_OLD_DUMPS>
+      <KDUMP_SAVEDIR>file:///var/crash</KDUMP_SAVEDIR>
+    </general>
+  </kdump>
+  <keyboard>
+    <keymap>german</keymap>
+  </keyboard>
+  <login_settings/>
+  <networking>
+    <interfaces config:type="list">
+      <interface>
+        <bootproto>dhcp</bootproto>
+        <device>eth0</device>
+        <startmode>auto</startmode>
+        <usercontrol>no</usercontrol>
+      </interface>
+    </interfaces>
+    <managed config:type="boolean">false</managed>
+    <routing>
+      <ip_forward config:type="boolean">false</ip_forward>
+    </routing>
+  </networking>
+  <ntp-client>
+    <ntp_policy>auto</ntp_policy>
+    <peers config:type="list">
+      <peer>
+        <address>192.168.66.1</address>
+        <options>iburst</options>
+        <type>server</type>
+      </peer>
+      <peer>
+        <address>ptbtime1.ptb.de</address>
+        <options>iburst</options>
+        <type>server</type>
+      </peer>
+      <peer>
+        <address>ptbtime2.ptb.de</address>
+        <options>iburst</options>
+        <type>server</type>
+      </peer>
+    </peers>
+    <start_at_boot config:type="boolean">true</start_at_boot>
+    <start_in_chroot config:type="boolean">false</start_in_chroot>
+  </ntp-client>
+  <software>
+    <packages config:type="list">
+      <package>gcc</package>
+      <package>autoyast2-installation</package>
+      <package>kernel-source</package>
+      <package>autoyast2-installation</package>
+      <package>autoyast2-installation</package>
+      <package>autoyast2-installation</package>
+    </packages>
+    <patterns config:type="list">
+      <pattern>Minimal</pattern>
+      <pattern>x11</pattern>
+      <pattern>base</pattern>
+      <pattern>documentation</pattern>
+      <pattern>gnome</pattern>
+      <pattern>Minimal-32bit</pattern>
+      <pattern>base-32bit</pattern>
+      <pattern>documentation-32bit</pattern>
+      <pattern>gnome-32bit</pattern>
+      <pattern>x11-32bit</pattern>
+      <pattern>32bit</pattern>
+    </patterns>
+  </software>
+  <timezone>
+    <hwclock>UTC</hwclock>
+    <timezone>Europe/Berlin</timezone>
+  </timezone>
+  <user_defaults>
+    <group>100</group>
+    <groups>video,dialout</groups>
+    <home>/home</home>
+    <inactive>-1</inactive>
+    <shell>/bin/bash</shell>
+    <skel>/etc/skel</skel>
+    <umask>022</umask>
+  </user_defaults>
+  <users config:type="list">
+    <user>
+      <encrypted config:type="boolean">true</encrypted>
+      <fullname>root</fullname>
+      <gid>0</gid>
+      <home>/root</home>
+      <password_settings>
+        <inact>-1</inact>
+        <max>99999</max>
+        <min>0</min>
+        <warn>7</warn>
+      </password_settings>
+      <shell>/bin/bash</shell>
+      <uid>0</uid>
+      <user_password>xxxxx</user_password>
+      <username>root</username>
+    </user>
+  </users>
+</profile>

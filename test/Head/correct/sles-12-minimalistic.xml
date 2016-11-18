@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE profile>
+<profile xmlns="http://www.suse.com/1.0/yast2ns" xmlns:config="http://www.suse.com/1.0/configns">
+  <deploy_image>
+    <image_installation config:type="boolean">false</image_installation>
+  </deploy_image>
+  <networking>
+    <keep_install_network config:type="boolean">true</keep_install_network>
+  </networking>
+  <software>
+    <image/>
+    <instsource/>
+    <packages config:type="list">
+      <package>grub2</package>
+      <package>glibc</package>
+      <package>openssh</package>
+      <package>mc</package>
+      <package>syslinux</package>
+      <package>kexec-tools</package>
+      <package>sles-release</package>
+    </packages>
+    <patterns config:type="list">
+      <pattern>Minimal</pattern>
+      <pattern>base</pattern>
+      <pattern>laptop</pattern>
+      <pattern>x11</pattern>
+    </patterns>
+  </software>
+  <user_defaults>
+    <expire/>
+    <group>100</group>
+    <groups/>
+    <home>/home</home>
+    <inactive>-1</inactive>
+    <no_groups config:type="boolean">true</no_groups>
+    <shell>/bin/bash</shell>
+    <skel>/etc/skel</skel>
+    <umask>022</umask>
+  </user_defaults>
+  <users config:type="list">
+    <user>
+      <encrypted config:type="boolean">true</encrypted>
+      <fullname>root</fullname>
+      <gid>0</gid>
+      <home>/root</home>
+      <password_settings>
+        <expire/>
+        <flag/>
+        <inact/>
+        <max/>
+        <min/>
+        <warn/>
+      </password_settings>
+      <shell>/bin/bash</shell>
+      <uid>0</uid>
+      <user_password>xxxxxxx</user_password>
+      <username>root</username>
+    </user>
+  </users>
+</profile>

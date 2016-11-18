@@ -1,0 +1,199 @@
+<?xml version="1.0"?>
+<!DOCTYPE profile>
+<profile xmlns="http://www.suse.com/1.0/yast2ns" xmlns:config="http://www.suse.com/1.0/configns">
+    <bootloader>
+      <global>
+        <terminal>serial</terminal>
+      </global>
+    </bootloader>
+    <general>
+      <storage>
+        <start_multipath config:type="boolean">true</start_multipath>
+      </storage>
+      <signature-handling>
+        <accept_non_trusted_gpg_key config:type="boolean">true</accept_non_trusted_gpg_key>
+      </signature-handling>
+      <mode>
+        <confirm config:type="boolean">false</confirm>
+      </mode>
+      <mouse>
+        <id>non</id>
+      </mouse>
+    </general>
+
+  <timezone>
+        <hwclock>UTC</hwclock>
+        <timezone>Europe/Vienna</timezone>
+    </timezone>
+    <keyboard>
+        <keymap>german-de</keymap>
+    </keyboard>
+    <language>
+       <language>en_GB</language>
+       <languages>de_DE,en_GB</languages>
+    </language>
+ <partitioning config:type="list">
+    <drive>
+      <device>/dev/disk/by-id/dm-name-360060e8007aaaa000030aaaa0000a78b</device>
+      <initialize config:type="boolean">true</initialize>
+      <partitions config:type="list">
+        <partition>
+          <lvm_group>rootvg</lvm_group>
+          <partition_id config:type="integer">142</partition_id>
+          <partition_nr config:type="integer">1</partition_nr>
+          <partition_type>primary</partition_type>
+          <size>max</size>
+        </partition>
+      </partitions>
+      <use>all</use>
+    </drive>
+    <drive>
+      <device>/dev/rootvg</device>
+      <is_lvm_vg config:type="boolean">true</is_lvm_vg>
+      <lvm2 config:type="boolean">true</lvm2>
+      <partitions config:type="list">
+        <partition>
+          <filesystem config:type="symbol">ext3</filesystem>
+          <format config:type="boolean">true</format>
+          <lv_name>root</lv_name>
+          <mount>/</mount>
+          <size>1G</size>
+        </partition>
+        <partition>
+          <filesystem config:type="symbol">ext3</filesystem>
+          <format config:type="boolean">true</format>
+          <lv_name>home</lv_name>
+          <mount>/home</mount>
+          <size>512M</size>
+        </partition>
+        <partition>
+          <filesystem config:type="symbol">ext3</filesystem>
+          <format config:type="boolean">true</format>
+          <lv_name>opt</lv_name>
+          <mount>/opt</mount>
+          <size>1G</size>
+        </partition>
+        <partition>
+          <filesystem config:type="symbol">swap</filesystem>
+          <format config:type="boolean">true</format>
+          <lv_name>swap</lv_name>
+          <mount>swap</mount>
+          <size>1G</size>
+        </partition>
+        <partition>
+          <filesystem config:type="symbol">ext3</filesystem>
+          <format config:type="boolean">true</format>
+          <lv_name>sysb</lv_name>
+          <mount>/var/tmp/sysb</mount>
+          <size>2G</size>
+        </partition>
+        <partition>
+          <filesystem config:type="symbol">ext3</filesystem>
+          <format config:type="boolean">true</format>
+          <lv_name>tmp</lv_name>
+          <mount>/tmp</mount>
+          <size>1G</size>
+        </partition>
+        <partition>
+          <filesystem config:type="symbol">ext3</filesystem>
+          <format config:type="boolean">true</format>
+          <lv_name>usr</lv_name>
+          <mount>/usr</mount>
+          <size>2G</size>
+        </partition>
+        <partition>
+          <filesystem config:type="symbol">ext3</filesystem>
+          <format config:type="boolean">true</format>
+          <lv_name>var</lv_name>
+          <mount>/var</mount>
+          <size>1G</size>
+        </partition>
+        <partition>
+          <filesystem config:type="symbol">ext3</filesystem>
+          <format config:type="boolean">true</format>
+          <lv_name>itmag</lv_name>
+          <mount>/opt/IBM/ITMAG</mount>
+          <size>1G</size>
+        </partition>
+      </partitions>
+      <pesize>32M</pesize>
+      <use>all</use>
+    </drive>
+  </partitioning>
+    <software>
+      <patterns config:type="list">
+        <pattern>fonts</pattern>
+        <pattern>fonts_opt</pattern>
+        <pattern>kde4_games</pattern>
+        <pattern>kde4_ide</pattern>
+      </patterns>
+      <packages config:type="list">
+        <package>Mesa-libGLESv2-2</package>
+        <package>Mesa-libGL1</package>
+        <package>Mesa-libEGL1</package>
+        <package>DirectFB-Mesa</package>
+        <package>DirectFB</package>
+      </packages>
+    </software>
+  <add-on>
+    <add_on_products config:type="list">
+    <listentry>
+      <media_url>http://192.168.200.16/install/tb017/</media_url>
+      <product>TB017 Repo</product>
+      <product_dir>/</product_dir>
+      <name>TB017 Repo</name>
+      <ask_on_error config:type="boolean">false</ask_on_error>
+    </listentry>
+    </add_on_products>
+  </add-on>
+    <users config:type="list">
+      <user>
+        <username>root</username>
+        <user_password>xxxxxxxxx</user_password>
+        <encrypted config:type="boolean">true</encrypted>
+        <forename/>
+        <surname/>
+      </user>
+    </users>
+    <networking>
+      <dns>
+        <dhcp_hostname config:type="boolean">true</dhcp_hostname>
+        <domain>local</domain>
+        <hostname>lnx0164a</hostname>
+        <nameservers config:type="list">
+         <nameserver>10.10.10.10</nameserver>
+        </nameservers>
+        <resolv_conf_policy>auto</resolv_conf_policy>
+        <searchlist config:type="list">
+         <search>m086</search>
+        </searchlist>
+        <write_hostname config:type="boolean">false</write_hostname>
+      </dns>
+      <interfaces config:type="list">
+        <interface>
+          <bootproto>dhcp4</bootproto>
+          <device>eth0</device>
+          <startmode>auto</startmode>
+        </interface>
+      </interfaces>
+      <routing>
+        <ip_forward config:type="boolean">false</ip_forward>
+      </routing>
+    </networking>
+    <scripts>
+         <post-scripts config:type="list">
+        <script>
+          <network_needed config:type="boolean">true</network_needed>
+          <filename>restore_files.sh</filename>
+          <interpreter>shell</interpreter>
+          <source>
+
+<![CDATA[#!/bin/sh
+/usr/bin/wget -O /var/tmp/sysb/install.tar.gz http://192.168.0.0/install/install.tar.gz
+tar -zpxf /var/tmp/sysb/install.tar.gz -C /
+]]>
+          </source>
+        </script>
+      </post-scripts>
+    </scripts>
+</profile>
