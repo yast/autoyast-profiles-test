@@ -2,6 +2,11 @@ Head:
   repository: http://download.opensuse.org/repositories/YaST:/Head/openSUSE_Factory/
   fallback_repository: http://download.opensuse.org/distribution/openSUSE-current/repo/oss/suse/
 
+sle-12-sp2-s390:
+  repository: http://download.suse.de/ibs/Devel:/YaST:/SLE-12-SP2/SLE_12_SP2/
+  fallback_repository: http://download.suse.de/ibs/SUSE:/SLE-12-SP2:/GA/standard/
+  architecture: s390x
+
 sle-12:
   repository: http://download.suse.de/ibs/Devel:/YaST:/SLE-12/SLE_12/
   fallback_repository: http://download.suse.de/ibs/SUSE:/SLE-12:/GA/standard/

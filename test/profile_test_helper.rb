@@ -72,6 +72,8 @@ class ProfileTestHelper
 
     raise "Cannot find 'repository' in configuration for '#{@test_dir}'" unless repo_config["repository"]
     raise "Cannot find 'fallback_repository' in configuration for '#{@test_dir}'" unless repo_config["fallback_repository"]
+    repo_config["architecture"] ||= "x86_64" # default
+    puts "Test will be done for architecture: #{repo_config["architecture"]}"
 
     @temporary_root = Dir.mktmpdir "#{TEMPORARY_DIRECTORY_TEMPLATE}_#{@test_dir}_"
     puts "Test for #{@test_dir} will use temporary root #{@temporary_root}"
@@ -86,7 +88,7 @@ class ProfileTestHelper
     begin
       Dir.chdir(__dir__) do
         output = Cheetah.run "./scripts/install_package_from_repos.sh",
-          @temporary_root, "yast2-schema",
+          @temporary_root, repo_config["architecture"], "yast2-schema",
           repo_config["repository"], repo_config["fallback_repository"],
           :stdout => :capture, :stderr => :capture
         puts output
