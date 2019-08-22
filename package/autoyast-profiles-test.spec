@@ -24,22 +24,22 @@
 ######################################################################
 
 Name:           autoyast-profiles-test
-Version:        0.0.3
+Version:        0.0.4
 Release:        0
 BuildArch:      noarch
 
 BuildRoot:      %{_tmppath}/%{name}-build
 Source0:        %{name}-%{version}.tar.bz2
 
-BuildRequires:  rubygem(rspec)
-BuildRequires:  rubygem(yast-rake)
-BuildRequires:  rubygem(cheetah)
+BuildRequires:  rubygem(%{rb_default_ruby_abi}:rspec)
+BuildRequires:  rubygem(%{rb_default_ruby_abi}:yast-rake)
+BuildRequires:  rubygem(%{rb_default_ruby_abi}:cheetah)
 BuildRequires:  yast2-schema
 BuildRequires:  jing
 
-Requires:       rubygem(rspec)
-Requires:       rubygem(yast-rake)
-Requires:       rubygem(cheetah)
+Requires:       rubygem(%{rb_default_ruby_abi}:rspec)
+Requires:       rubygem(%{rb_default_ruby_abi}:yast-rake)
+Requires:       rubygem(%{rb_default_ruby_abi}:cheetah)
 Requires:       yast2-schema
 Requires:       jing
 
